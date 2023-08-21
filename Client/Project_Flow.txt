@@ -1,0 +1,6 @@
+Step 1 -> Create Folder Hackathon2
+Step 2 -> Hackathon2 -> Create Folder Client & Server
+Step 3 -> Client -> Open Terminal -> 1) npm i create-react-app  2) npx create-react-app awesome_quotes
+Step 4 -> Server -> Open Terminal -> 1) npm -init --yes 2) npm i express 3) npm i mysql 4) npm i mysql2 5)npm i config
+Step 5 -> Server -> Create Folder Routes
+

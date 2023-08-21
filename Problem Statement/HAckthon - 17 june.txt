@@ -1,0 +1,61 @@
+create table Users
+(
+	id int primary key auto_increment,
+	first_name varchar(50),
+	last_name varchar(50),
+	email varchar(50),
+	password varchar(50),
+	mobile varchar(10),
+	token varchar(255)
+);
+
+create table Quotes
+(
+	quotes_id int primary key auto_increment,
+	text varchar(100),
+	author varchar(20),
+	user_id int ,
+	FOREIGN KEY (user_id) REFERENCES Users(id)
+	
+);
+
+create table FavouriteQuote
+(
+	user_id int,
+	quotes_id int,
+	FOREIGN KEY(user_id) REFERENCES Quotes(user_id),
+	FOREIGN KEY(quotes_id) REFERENCES Quotes(quotes_id)
+);
+
+alter table FavouriteQuote ADD UNIQUE unique_index(user_id, quotes_id);
+
+Insert into Users(id,first_name,last_name,email,password,mobile)
+values(1,'sachin','perke','sachinperke@gmail.com','sachin@123',7218819857),
+(2,'Shreejay','Mane','shreejaymane15@gmail.com','shree@123',7756800471),
+(3,'Shreenath','Jondhale','shrinathjondhale@gmail.com','shrinath@123',9218815857),
+(4,'Vaibhav','Ramteke','vaibhavramteke@gmail.com','vaibhav@123',9518819857),
+(5,'Omkar','Wadkar','omkarwadkar@gmail.com','omkar@123',8918819857);
+
+
+Insert into Quotes(quotes_id,text,author,user_id)
+values(1,'To live is the rarest thing in the world','Stephen King',1),
+
+(2,'Thats one small step for a man a giant leap for mankind','Dan Brown',2),
+
+(3,'It is never too late to be what you might have been','J. K. Rowling',4),
+
+(4,'Pain is inevitable','James Patterson',5),
+
+(5,'The love of money is the root of all evil','Toni Morrison',3),
+
+(6,'The only thing we have to fear is fear itself','Chetan Bhagat',1),
+
+(7,'The truth will set you free','Jhumpa Lahiri',4);
+
+
+
+
+
+
+
+
